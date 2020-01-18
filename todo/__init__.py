@@ -19,4 +19,3 @@ def register_blueprints(app):
 
 
 __all__ = (create_app, register_blueprints)
-

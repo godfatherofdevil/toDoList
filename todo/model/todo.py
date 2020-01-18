@@ -1,4 +1,11 @@
-from mongoengine import Document, StringField, DateField, BooleanField, ReferenceField, CASCADE
+from mongoengine import (
+    Document,
+    StringField,
+    DateField,
+    BooleanField,
+    ReferenceField,
+    CASCADE,
+)
 
 
 class ToDoList(Document):
@@ -18,5 +25,3 @@ class ToDoItem(Document):
 
     def __repr__(self):
         return f"{self.__name__}={self.name}"
-
-
