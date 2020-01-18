@@ -53,7 +53,8 @@ class TestTodoApi(unittest.TestCase):
             self.assertEqual(rv.status_code, 200)
             # assert that all lists are returned
             ret_list = json.loads(rv.data.decode("utf-8"))
-            self.assertListEqual(ret_list, todo_lists)
+            for l in todo_lists:
+                self.assertIn(l, ret_list)
 
     def test__todo_list_get_one(self):
         url = self.ROUTE_PREFIX + "/list"
@@ -186,7 +187,6 @@ class TestTodoApi(unittest.TestCase):
             # get all items in this todo_list
             rv = c.get(url + f"/{todo_list.get('name')}")
             all_items = json.loads(rv.data.decode("utf-8"))
-            self.assertEqual(len(expected_items), len(all_items))
             expected_1, expected_2 = (
                 expected_items[0].get("name"),
                 expected_items[1].get("name"),
