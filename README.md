@@ -4,12 +4,14 @@
 ## steps to run locally-
 1. `git clone https://github.com/godfatherofdevil/toDoList.git`
 2. `cd toDoList`
-3. `python -m pip install -r requirements.txt`
-4. ensure mongodb is running on localhost @ port 27017
+3. `python -m venv .env`
+4. `source .env/bin/activate`
+5. `python -m pip install -r requirements.txt`
+6. ensure mongodb is running on localhost @ port 27017
  * either native installation of mongo
  * or `docker run -d -p 27017:27017 --name mongo_local mongo:latest`
- 5. `export TODO_ENV=dev` (by default it is 'dev' this step is required for other environments)
- 6. `python app.py`
+ 7. `export TODO_ENV=dev` (by default it is 'dev' this step is required for other environments)
+ 8. `python app.py`
  
  Now the toDoList web service will be running on `http://0.0.0.0:5000`
  
