@@ -24,7 +24,7 @@
  3. `curl -X DELETE http://0.0.0.0:5000/api/v1/todo/list/<string:list_name>`
  This will delete the specified list, same for PUT and PATCH to update
  4. `curl -X POST -H "Content-Type: application/json" http://0.0.0.0:5000/api/v1/todo/item/<string:list_name> 
- -d '{"name": "phase1", "text": "some item that need to be finished in sports category", "due_date": "30/01/2020", "status": false}'`
+ -d '{"name": "phase1", "text": "some item that need to be finished in <list_name> category", "due_date": "30/01/2020", "status": false}'`
  Note that all the fields for item are required and due_date has format of DD/MM/YYYY
  5. `curl -X GET http://0.0.0.0:5000/api/v1/todo/item/<string:list_name>`
  This will return the list of all the items for this todo_list
